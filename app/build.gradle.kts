@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.johnochavez.quickiepaasdasdy"
+    namespace = "com.johnochavez.quickiepay"
     compileSdk = 35
 
     defaultConfig {
