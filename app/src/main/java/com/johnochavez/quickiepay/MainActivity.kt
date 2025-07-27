@@ -11,9 +11,15 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.google.firebase.Firebase
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.database
 import com.johnochavez.quickiepay.ui.theme.QuickiePayTheme
 
 class MainActivity : ComponentActivity() {
+
+    lateinit var database: FirebaseDatabase
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -24,6 +30,9 @@ class MainActivity : ComponentActivity() {
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)
                     )
+                    database = Firebase.database
+                    val myRef = database.getReference("message")
+                    myRef.setValue("Hello, World.!.")
                 }
             }
         }
